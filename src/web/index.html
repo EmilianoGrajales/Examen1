@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Usuario</h1>
+        <form id="registroForm" onsubmit="submitForm(event)">
+            <div class="input-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="input-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="input-group">
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" required>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de manera tradicional
+
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const contraseña = document.getElementById('contraseña').value;
+
+            // Aquí puedes agregar lógica para manejar los datos, como enviarlos a un servidor
+            console.log('Nombre:', nombre);
+            console.log('Correo:', correo);
+            console.log('Contraseña:', contraseña);
+
+            // Limpia el formulario
+            document.getElementById('registroForm').reset();
+        }
+    </script>
+</body>
+</html>
